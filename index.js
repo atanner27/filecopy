@@ -7,11 +7,8 @@
 var shell = require('shelljs');
 
 exports.helloWorld = (req, res) => {
-
   let message = req.query.message || req.body.message || 'Hello World!';
-
-  res.status(200).send(shell.ls('projs/*.js'));
-
-
-  let ex = 0;
+  
+  console.log(shell.ls());
+  res.status(200).send(JSON.stringify(shell.ls()));
 };
