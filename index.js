@@ -10,11 +10,7 @@ exports.helloWorld = (req, res) => {
 
   let message = req.query.message || req.body.message || 'Hello World!';
 
-  shell.ls('*.js').forEach(function (file) {
-    console.log(file);
-  });
-
-  res.status(200).send(message);
+  res.status(200).send(shell.ls('projs/*.js'));
 
 
   let ex = 0;
